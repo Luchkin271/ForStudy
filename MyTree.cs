@@ -4,6 +4,10 @@
     {
         public int Value { get; }
         private List<MyTree> _children = new List<MyTree>();
+        public MyTree(int value)
+        {
+            Value = value;
+        }
         public MyTree(int value, MyTree root)
         {
             Value = value;
