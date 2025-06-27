@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿
 Console.WriteLine("Hello, World!");
+
+//Для Начала вспомним базовый материал на примере задачи: 
+//Создать класс реализующий простое дерево сфункциями добавления и пойска
