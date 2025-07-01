@@ -1,4 +1,6 @@
-﻿
+﻿using System.Reflection.Metadata;
+using ForStady.Structures;
+
 
 //Для Начала вспомним базовый материал на примере задачи: 
 //Создать класс реализующий простое дерево сфункциями добавления и пойска
@@ -34,3 +36,15 @@
 //Sorter = new BubbleSort<int>();
 //Sorter.Sort(ints);
 //Console.WriteLine($"{ints[0]}{ints[1]}{ints[2]}{ints[3]}{ints[4]}");
+
+
+//Следующей задачей напишем HashMap
+//var map = new HashTable<string, int>();
+//map.Add("apple", 10);
+//map.Add("banana", 20);
+
+//Console.WriteLine(map.Get("apple"));  // 10
+//Console.WriteLine(map.Get("banana")); // 20
+
+//map.Remove("apple");
+//Console.WriteLine(map.Count); // 1
