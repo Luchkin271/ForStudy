@@ -48,3 +48,21 @@ using ForStady.Structures;
 
 //map.Remove("apple");
 //Console.WriteLine(map.Count); // 1
+
+// Следующей задачей добавим реализацию Графа через список смежности
+//MyGraph graph = new MyGraph();
+
+//MyGraphNode A = new MyGraphNode("A");
+//MyGraphNode B = new MyGraphNode("B");
+//MyGraphNode C = new MyGraphNode("C");
+//MyGraphNode D = new MyGraphNode("D");
+//MyGraphNode E = new MyGraphNode("E");
+
+//graph.AddEdge(A, B);
+//graph.AddEdge(A, C);
+//graph.AddEdge(B, D);
+//graph.AddEdge(C, E);
+//graph.AddEdge(D, E);
+//graph.AddEdge(E, A);
+
+//graph.PrintGraph();
