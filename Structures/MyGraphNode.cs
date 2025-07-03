@@ -16,5 +16,13 @@ namespace ForStady.Structures
         {
             Console.WriteLine(Name);
         }
+        public override bool Equals(object obj)
+        {
+            return obj is MyGraphNode node && Name == node.Name;
+        }
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
     }
 }

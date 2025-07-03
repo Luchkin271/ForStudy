@@ -12,7 +12,7 @@ namespace ForStady.Structures
         private Dictionary<MyGraphNode, List<MyGraphNode>> _adjacencyList;
         public MyGraph()
         {
-            _adjacencyList = new Dictionary<MyGraphNode, List<MyGraphNode>> ();
+            _adjacencyList = new Dictionary<MyGraphNode, List<MyGraphNode>>();
         }
         public void AddVertex(MyGraphNode newNode)
         {
@@ -39,16 +39,51 @@ namespace ForStady.Structures
         }
         public void PrintGraph()
         {
-            foreach(var vertex in _adjacencyList)
+            foreach (var vertex in _adjacencyList)
             {
                 vertex.Key.Print();
-                foreach(var edge in vertex.Value)
+                foreach (var edge in vertex.Value)
                 {
                     Console.Write("|---");
                     edge.Print();
                 }
             }
         }
-
+        public List<MyGraphNode> FindPathBFS(MyGraphNode start, MyGraphNode goal)
+        {
+            var queue = new Queue<MyGraphNode>();
+            var visited = new Dictionary<MyGraphNode, MyGraphNode>();
+            queue.Enqueue(start);
+            visited[start] = null;
+            while (queue.Count > 0)
+            {
+                var current = queue.Dequeue();
+                if (current == goal)
+                {
+                    return ReconstructPath(visited, goal);
+                }
+                foreach (var neighbor in _adjacencyList[current])
+                {
+                    if (!visited.ContainsKey(neighbor))
+                    {
+                        visited[neighbor] = current;
+                        queue.Enqueue(neighbor);
+                    }
+                }
+            }
+            return null;
+        }
+        private List<MyGraphNode> ReconstructPath(Dictionary<MyGraphNode, MyGraphNode> visited, MyGraphNode goal)
+        {
+            var path = new List<MyGraphNode>();
+            var current = goal;
+            while (current != null)
+            {
+                path.Add(current);
+                current = visited[current];
+            }
+            path.Reverse();
+            return path;
+        }
     }
 }
